@@ -101,7 +101,6 @@ def main():
     prova.getEvent()
     prova.addEvent("Primo evento API","Sul tuo PC","2013-12-05T23:00:00.000+01:00","2013-12-05T23:30:00.000+01:00")
     prova.getEvent()
-    #prova.deleteAllEvent()
 
 
 if __name__ == '__main__':
