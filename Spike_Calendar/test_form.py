@@ -1,34 +1,11 @@
-__author__ = 'WatchTower'
-import cgi
-import cgitb; cgitb.enable()  # for troubleshooting
+import SimpleHTTPServer
+import SocketServer
 
-print "Content-type: text/html"
-print
+PORT = 8000
 
-print """
-<html>
+Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
-<head><title>Sample CGI Script</title></head>
+httpd = SocketServer.TCPServer(("", PORT), Handler)
 
-<body>
-
-  <h3> Sample CGI Script </h3>
-"""
-
-form = cgi.FieldStorage()
-message = form.getvalue("message", "(no message)")
-
-print """
-
-  <p>Previous message: %s</p>
-
-  <p>form
-
-  <form method="post" action="index.cgi">
-    <p>message: <input type="text" name="message"/></p>
-  </form>
-
-</body>
-
-</html>
-""" % message
+print "serving at port", PORT
+httpd.serve_forever()
