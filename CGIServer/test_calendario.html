@@ -27,11 +27,60 @@
                 'step': 30
             });
         });
+		
+		function validate_Form(thisform)
+		{
+		  with (thisform)
+		  {
+				if(controlData(date1)==false)
+				{
+					date1.focus();
+					return false;
+				}
+				else if(controlOra(time1)==false)
+				{
+					time1.focus();
+					return false;
+				}
+			}
+		}
+
+		function controlData(data)
+		{
+			with(data)
+			{
+				if(value=="")
+				{
+					alert("Inserire la data!");
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		}
+		
+		function controlOra(ora)
+		{
+			with(ora)
+			{
+				if(value=="")
+				{
+					alert("Inserire l'ora!");
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		}
   </script>
 </head>
 <body>
 
-    <form method="GET" action="cgi-bin/test_form.py">
+    <form method="GET" action="cgi-bin/test_form.py" onSubmit="return validate_Form(this)">
         <div id="in_ora">Ora:<br /><input type="text" id="time1"/></div>
         <div id="in_data">Date:<br /><input type="text" id="date1"/></div>
         <p><input type="submit" value="Prenota"/></p>
