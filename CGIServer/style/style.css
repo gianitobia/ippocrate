@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    margin: 10px;
+}
+
+#date1 {
+    text-align: center;
+    width: 200px;
+}
+
+#time1 {
+    text-align: center;
+    width: 95px;
+}
+
+#in_data {
+    text-align: center;
+    width: 210px;
+    margin-left: 35%;
+}
+
+#in_ora {
+    text-align: center;
+    width: 100px;
+    margin-right: 40%;
+    float: right;
+}
